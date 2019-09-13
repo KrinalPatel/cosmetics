@@ -1,0 +1,26 @@
+<h1><p style="text-align:center">Send Your Feedback</p></h1>
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <h3 *ngIf="success"><p style="text-align: center"> Your form is valid!</p></h3> 
+    
+    <label>
+     <b>Name:</b> <br/>
+      <input type="text" formControlName="name">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+      </div>
+    </label>
+<br/>
+<br/>
+<label>
+  <b>Feedback:</b><br/>
+  <input type="text" formControlName="name">
+  <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+    <div *ngIf="messageForm.controls.name.errors.required"> Send your Feedback</div>
+  </div>
+</label>
+    
+    <br/>
+    <br/>
+      <input type="submit" value="Send feedback" class="cta">
+    
+  </form>

@@ -1,0 +1,25 @@
+<h1><p style="text-align:center">LOGIN</p></h1>
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <h3 *ngIf="success"><p style="text-align: center"> you have logged in</p></h3> 
+    
+    <label>
+      Name:<br/>
+      <input type="text" formControlName="name">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+      </div>
+    </label>
+<br/>
+<br/>
+    <label>
+      Password:<br/>
+      <input type="password" formControlName="password">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+      <div *ngIf="messageForm.controls.name.errors.required">Password is required</div>
+      </div>
+    </label>
+    <br/>
+    <br/>
+      <input type="submit" value="Login" class="cta">
+    
+  </form>
